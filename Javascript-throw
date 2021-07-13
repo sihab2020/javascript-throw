@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <h2>Javascript Throw Test </h2>
+
+    <h5> Input your Name </h5>
+
+    <input id="text" type="text" placeholder="Enter your Nickname"
+        style="width:200px;height:20px; color:gray; background:#ff20; font-weight:bold;">
+    <button id="btn"> Enter </button>
+    <p id="errMessage"></p>
+
+    <script>
+        document.querySelector("#btn").addEventListener("click", testText)
+
+        function testText() {
+
+            let message = document.querySelector("#errMessage")
+            message.innerHTML = "";
+            let x = document.querySelector("#text").value;
+            let y = typeof (x);
+            try {
+                if (x == "") throw "empty Value"
+                if (y == "string") throw "Yeah!! Here you Go.."
+                x = Number(x)
+                if (x >= 1) throw "No Number In this Field!!"
+            } catch (err) {
+
+                message.innerHTML = "Your Input " + err;
+
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
